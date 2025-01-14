@@ -1,13 +1,10 @@
 import "./App.css";
-
-import * as THREE from "three";
+import { useBoard } from "./hooks/useBoard";
 
 function App() {
-  // const [count, setCount] = useState(0)
-  const scene = new THREE.Scene();
-  console.log(scene);
+  const { mountRef } = useBoard();
 
-  return <div />;
+  return <div ref={mountRef} />;
 }
 
 export default App;
