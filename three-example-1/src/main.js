@@ -15,6 +15,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
+camera.position.set(0, 0, 500);
 
 // WebGLRenderer: WebGLを使ったレンダリングを行うクラス
 /**
@@ -26,7 +27,7 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-renderer.render(scene, camera);
+// renderer.render(scene, camera);
 
 // create geometry
 // SphereGeometry: 球体のジオメトリ
@@ -36,3 +37,23 @@ renderer.render(scene, camera);
  * heightSegments: 縦方向の分割数 (ポリゴンの数)
  */
 const ballGeometry = new THREE.SphereGeometry(100, 64, 32);
+
+// create material
+// MeshPhysicalMaterial: 物理ベースのマテリアル
+/**
+ * color: マテリアルの色
+ * roughness: 表面の粗さ
+ * metalness: 金属度
+ * reflectivity: 反射率
+ * clearCoat: クリアコート
+ * clearCoatRoughness: クリアコートの粗さ
+ */
+const ballMaterial = new THREE.MeshPhysicalMaterial({})
+// Mesh: ジオメトリとマテリアルを組み合わせる
+const ballMesh = new THREE.Mesh(ballGeometry, ballMaterial);
+
+scene.add(ballMesh);
+
+// レンダリング
+
+renderer.render(scene, camera);
