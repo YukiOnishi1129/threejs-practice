@@ -27,3 +27,12 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 renderer.render(scene, camera);
+
+// create geometry
+// SphereGeometry: 球体のジオメトリ
+/**
+ * radius: 球体の半径
+ * widthSegments: 横方向の分割数 (ポリゴンの数)
+ * heightSegments: 縦方向の分割数 (ポリゴンの数)
+ */
+const ballGeometry = new THREE.SphereGeometry(100, 64, 32);
