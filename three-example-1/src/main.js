@@ -54,6 +54,16 @@ const ballMesh = new THREE.Mesh(ballGeometry, ballMaterial);
 
 scene.add(ballMesh);
 
-// レンダリング
+// 平行光源を追加
+// DirectionalLight: 平行光源
+/**
+ * color: 光の色
+ * intensity: 光の強さ
+ */
+const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+// 光源の位置を変更する
+directionalLight.position.set(1, 1, 1);
+scene.add(directionalLight);
 
+// レンダリング
 renderer.render(scene, camera);
