@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Root"
+		},
+		{
+			"path": "./practice-1/",
+			"name": "practice-1"
+		}
+	],
+}
