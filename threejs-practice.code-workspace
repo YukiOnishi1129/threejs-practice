@@ -9,4 +9,7 @@
 			"name": "practice-1"
 		}
 	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Root"
+	},
 }
