@@ -4,9 +4,13 @@
 			"path": ".",
 			"name": "Root"
 		},
+		// {
+		// 	"path": "./practice-1/",
+		// 	"name": "practice-1"
+		// }
 		{
-			"path": "./practice-1/",
-			"name": "practice-1"
+			"path": "./three-example-1/",
+			"name": "example-1"
 		}
 	],
 	"settings": {
