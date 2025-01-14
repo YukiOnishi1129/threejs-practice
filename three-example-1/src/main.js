@@ -1,24 +1,27 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import * as THREE from "three";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const scene = new THREE.Scene();
 
-setupCounter(document.querySelector('#counter'))
+// PerspectiveCamera(fov: number, aspect: number, near: number, far: number)
+/**
+ * fov: 視野角 カメラが写す角度
+ * aspect: アスペクト比 カメラの縦横比
+ * near: カメラからの最小距離(開始距離)
+ * far: カメラからの最大距離 (終了距離)
+ */
+const camera = new THREE.PerspectiveCamera(
+  50,
+  window.innerWidth / window.innerHeight, // 画面全体のアスペクト比
+  0.1,
+  1000
+);
+
+// WebGLRenderer: WebGLを使ったレンダリングを行うクラス
+/**
+ *
+ */
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+renderer.render(scene, camera);
