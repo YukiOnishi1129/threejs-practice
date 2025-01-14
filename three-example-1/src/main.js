@@ -20,7 +20,9 @@ const camera = new THREE.PerspectiveCamera(
 /**
  *
  */
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({
+  alpha: true, // 背景を透過 (透明度を表す)
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
